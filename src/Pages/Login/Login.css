@@ -1,0 +1,196 @@
+/* Dark Theme Variables */
+:root {
+    --dark-bg: #121212;
+    --dark-card: #1e1e1e;
+    --dark-text: #ffffff;
+    --dark-text-secondary: #cccccc;
+    --dark-border: #444;
+    --dark-input-bg: #2d2d2d;
+    --dark-input-border: #555;
+    --dark-primary: #3a5bff;
+    --dark-primary-hover: #2a4bdf;
+    --dark-success: #28a745;
+    --dark-success-hover: #218838;
+    --dark-link: #4dabf7;
+    --dark-hover: #2c3e50;
+}
+
+/* Base Styles */
+.login-container {
+    min-height: 100vh;
+}
+
+/* Remove focus outline */
+.no-focus-outline:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--dark-input-border) !important;
+}
+
+/* Dark Theme Overrides */
+.dark-theme {
+    background-color: var(--dark-bg);
+}
+
+.dark-theme .login-card {
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.dark-theme .text-light {
+    color: var(--dark-text) !important;
+}
+
+.dark-theme .text-muted {
+    color: var(--dark-text-secondary) !important;
+}
+
+.dark-theme .form-label {
+    color: var(--dark-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Input Group Styles - Fixed Height */
+.dark-theme .input-group-text {
+    background-color: var(--dark-input-bg);
+    border: 1px solid var(--dark-input-border);
+    border-right: none;
+    color: var(--dark-text-secondary) !important;
+    height: 38px;
+    padding: 0.375rem 0.75rem;
+}
+
+.dark-theme .input-group .form-control {
+    border-left: none;
+}
+
+.dark-theme .input-group .toggle-password {
+    background-color: var(--dark-input-bg);
+    border: 1px solid var(--dark-input-border);
+    border-left: none;
+    color: var(--dark-text-secondary);
+    height: 38px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.dark-theme .input-group .toggle-password:hover {
+    background-color: var(--dark-hover);
+    color: var(--dark-text);
+}
+
+.dark-theme .dark-input {
+    background-color: var(--dark-input-bg);
+    border: 1px solid var(--dark-input-border);
+    color: var(--dark-text);
+    padding: 0.375rem 0.75rem;
+    height: 38px;
+    line-height: 1.5;
+}
+
+.dark-theme .dark-input::placeholder {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Social Icons Container */
+.social-icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.social-icon-btn {
+    background-color: #373737;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--dark-border);
+    border-radius: 6px;
+    color: var(--dark-text);
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 100px;
+    height: 50px;
+}
+
+.social-icon-btn:hover {
+    background-color: var(--dark-hover);
+    transform: translateY(-2px);
+}
+
+.social-icon-btn i {
+    font-size: 1rem;
+}
+
+/* Other Elements */
+.dark-theme .forgot-password {
+    color: var(--dark-link) !important;
+    font-size: 0.9rem;
+}
+
+.dark-theme .forgot-password:hover {
+    text-decoration: underline !important;
+}
+
+.dark-theme .login-btn {
+    background-color: var(--dark-primary);
+    border: none;
+    font-weight: 600;
+    height: 42px;
+}
+
+.dark-theme .login-btn:hover {
+    background-color: var(--dark-primary-hover);
+}
+
+.dark-theme hr {
+    border-color: var(--dark-border);
+}
+
+.dark-theme .signup-btn {
+    background-color: var(--dark-success);
+    border: none;
+    font-weight: 600;
+}
+
+.dark-theme .signup-btn:hover {
+    background-color: var(--dark-success-hover);
+}
+
+.dark-theme .signup-link {
+    color: var(--dark-link) !important;
+    font-weight: 600;
+}
+
+.dark-theme .signup-link:hover {
+    text-decoration: underline !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .dark-theme .login-card {
+        border-radius: 8px;
+    }
+
+    .dark-theme .card-body {
+        padding: 1.5rem !important;
+    }
+
+    .social-icon-btn {
+        min-width: 80px;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        height: 50px;
+    }
+}

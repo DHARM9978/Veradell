@@ -1,0 +1,198 @@
+<div id="sidebar" className="sidebar">
+        <button className="close-btn" onclick="toggleSidebar()">&times;</button>
+        <ul>
+            <li><a href="#"><i className="fas fa-star"></i> New Arrivals</a></li>
+            <li><a href="#"><i className="fas fa-fire"></i> Best Sellers</a></li>
+            <li><a href="#"><i className="fas fa-tag"></i> Sale</a></li>
+            <li><a href="#"><i className="fas fa-clock"></i> Deal of the Day</a></li>
+            <li className="dropdown">
+                <a href="#"><i className="fas fa-shopping-cart"></i> Shop <i className="fas fa-chevron-down"></i></a>
+                <ul className="dropdown-menu">
+                    <li><a href="#">Shirt</a></li>
+                    <li><a href="#">T-Shirt</a></li>
+                    <li><a href="#">Trousers</a></li>
+                    <li><a href="#">Winterwear</a></li>
+                    <li><a href="#">Summerwear</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i className="fas fa-info-circle"></i> Help Center</a></li>
+            <li><a href="#"><i className="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Header -->
+    <header className="header">
+        <div className="menu-icon" onclick="toggleSidebar()">
+            <i className="fas fa-bars"></i>
+        </div>
+        <div className="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div className="nav-icons">
+            <a href="#"><i className="fas fa-robot"></i></a>
+            <a href="#"><i className="fas fa-search"></i></a>
+            <a href="#"><i className="fas fa-user"></i></a>
+            <a href="#" className="heart-icon">
+                <i className="fas fa-heart"></i>
+                <span className="notification-dot"></span>
+            </a>
+            <a href="#" className="cart-icon">
+                <i className="fas fa-shopping-bag"></i>
+                <span className="cart-badge">2</span>
+            </a>
+        </div>
+    </header>
+    /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: white;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px 20px;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.logo img {
+    width: 150px;
+}
+
+/* Navigation Icons */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-icons a {
+    color: white;
+    font-size: 20px;
+    position: relative;
+    text-decoration: none;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: blue;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-dot {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    padding-top: 60px;
+    transition: 0.3s;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+/* Sidebar Dropdown */
+.sidebar .dropdown .dropdown-menu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.sidebar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-icons {
+        gap: 10px;
+    }
+    .menu-icon {
+        font-size: 20px;
+    }
+    .logo img {
+        width: 120px;
+    }
+}
+
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+}
+
