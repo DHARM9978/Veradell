@@ -194,3 +194,22 @@
         height: 50px;
     }
 }
+
+/* Validation Error Styles */
+.dark-theme .is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.dark-theme .invalid-feedback {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+.dark-theme .input-group .is-invalid {
+    z-index: 3;
+}
+
+.dark-theme .input-group-text+.is-invalid {
+    border-left: 1px solid #dc3545 !important;
+}
