@@ -1,17 +1,32 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+//Extra File 
+// import Footer from './Extra/Extra';
+
+//Incomplete Pages/Sections
 import About from "./pages/About/About";
 import ChangePassword from "./pages/ChangePassword/ChangePassword";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+
+// Complete Sections
+import Header from "./Components/Header/Header";
+import Footer from "./Components/LastSectionFooter/LastSectionFooter";
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        {/* <Route path="" element={<About />} /> */}
-        <Route path="" element={<ChangePassword />} />
-      </Routes>
-    </Router>
+    <>
+      {/* <Header />  */}    {/* Done  */}
+
+
+      {/* <Login /> */}
+      {/* <Signup /> */}
+
+
+      {/* <Footer /> */} {/* Done  */}
+
+    </>
   );
 };
 

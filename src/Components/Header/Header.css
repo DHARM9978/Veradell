@@ -3,10 +3,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: black;
+    background: #000;
     color: white;
-    padding: 10px 20px;
-    position: relative;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .menu-toggle {
@@ -15,32 +20,43 @@
     color: white;
     font-size: 20px;
     cursor: pointer;
+    transition: transform 0.2s ease;
+    z-index: 10;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    font-size: 22px;
-    font-weight: bold;
-
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
 }
 
 .logo img {
-    /* height: 30px; */
     width: 150px;
-    margin-right: 10px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 .header-icons {
     display: flex;
     align-items: center;
-
+    gap: 30px;
 }
 
-.header-icons i {
-    font-size: 18px;
-    margin-left: 30px;
+.header-icons .icon {
+    font-size: 24px;
+    color: #ccc;
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.header-icons .icon:hover {
+    color: white;
+    transform: scale(1.1);
 }
 
 .cart-icon {
@@ -49,72 +65,123 @@
 
 .cart-badge {
     position: absolute;
-    top: -5px;
-    right: -10px;
+    top: -8px;
+    right: -8px;
     background: red;
     color: white;
-    font-size: 12px;
-    padding: 3px 6px;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Sidebar Styling */
 .sidebar {
     position: fixed;
-    left: -250px;
+    left: -100%;
     top: 0;
-    width: 250px;
-    height: 100%;
+    width: 280px;
+    height: 100vh;
     background: #111;
-    padding: 20px;
-    transition: left 0.3s;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 999;
+    overflow-y: auto;
 }
 
 .sidebar.open {
     left: 0;
 }
 
+.sidebar-content {
+    padding: 20px;
+    padding-top: 40px;
+}
+
 .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     background: none;
     border: none;
     color: white;
     font-size: 22px;
     cursor: pointer;
-    display: block;
-    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg);
 }
 
 .nav-links ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .nav-links li {
-    padding: 10px 0;
+    padding: 12px 0;
     cursor: pointer;
     color: white;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links li:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-icon {
+    transition: transform 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-icon.open {
+    transform: rotate(180deg);
 }
 
 .submenu {
-    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    padding-left: 15px;
+}
+
+.submenu.open {
+    max-height: 500px;
 }
 
 .submenu li {
-    padding: 5px 0;
+    padding: 10px 0;
+    font-size: 0.9em;
+    opacity: 0.8;
 }
 
-/* Mobile View Sidebar Icons */
+.submenu li:hover {
+    opacity: 1;
+}
+
+/* Mobile Icons */
 .sidebar-icons {
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    padding: 20px;
+    gap: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 20px;
 }
 
-.sidebar-icons i {
-    font-size: 18px;
-    color: white;
-    margin: 0 10px;
+.sidebar-icons .icon {
+    font-size: 24px;
 }
 
 /* Overlay */
@@ -125,4 +192,28 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.open~.overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo img {
+        width: 120px;
+    }
+
+    .header-icons {
+        display: none;
+    }
+
+    .sidebar {
+        width: 85%;
+    }
 }

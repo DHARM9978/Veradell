@@ -1,9 +1,9 @@
+/* Base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    /* background-color: #111; */
 }
 
 .mainFooter {
@@ -11,7 +11,6 @@
 }
 
 .footer {
-    /* background-color: #111; */
     color: white;
     padding: 40px 80px;
     display: flex;
@@ -23,79 +22,161 @@
     flex: 1;
     min-width: 250px;
     margin-bottom: 20px;
+    opacity: 0;
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
+/* Column entry animation */
+@keyframes colorfulFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        box-shadow: 0 0 0 0 rgba(75, 192, 192, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(75, 192, 192, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.footer-logo img {
+/* Logo animation */
+.logo-animate {
     width: 150px;
-    margin-right: 10px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.footer p {
+.logo-animate:hover {
+    transform: rotate(-5deg) scale(1.1);
+    filter: drop-shadow(0 0 8px #ff7eb9);
+}
+
+/* Description text */
+.description-animate {
     font-size: 16px;
     margin: 20px 0;
-
     color: #bbb;
     max-width: 250px;
+    transition: all 0.3s ease;
+}
+
+.description-animate:hover {
+    color: #7afcff;
+    text-shadow: 0 0 5px rgba(122, 252, 255, 0.5);
+}
+
+/* Social icons */
+.social-icons {
+    display: flex;
+    gap: 20px;
 }
 
 .social-icons a {
     color: white;
-    margin-right: 30px;
     font-size: 18px;
-    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.footer h3 {
+.social-icon.fb:hover {
+    color: #4267B2;
+    transform: translateY(-5px) scale(1.2);
+}
+
+.social-icon.tw:hover {
+    color: #1DA1F2;
+    transform: translateY(-5px) scale(1.2);
+}
+
+.social-icon.ig:hover {
+    color: #E1306C;
+    transform: translateY(-5px) scale(1.2);
+}
+
+.social-icon.li:hover {
+    color: #0077B5;
+    transform: translateY(-5px) scale(1.2);
+}
+
+/* Section titles (simplified white) */
+.section-title {
     font-size: 16px;
     margin-bottom: 25px;
+    color: white;
+    position: relative;
 }
 
-.footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer ul li {
+/* Links with animation */
+.link-animate {
     margin-bottom: 20px;
-
+    transition: all 0.3s ease;
 }
 
-.footer ul li a {
+.link-animate a {
     color: #bbb;
-    gap: 50px;
     text-decoration: none;
+    padding: 5px 0;
+    position: relative;
 }
 
-.newsletter {
+.link-animate a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #7afcff, #ff7eb9);
+    transition: width 0.3s ease;
+}
+
+.link-animate:hover {
+    transform: translateX(8px);
+}
+
+.link-animate:hover a::before {
+    width: 100%;
+}
+
+/* Newsletter section */
+.newsletter-container {
     display: flex;
     flex-direction: column;
 }
 
-.newsletter input {
+.newsletter-input {
     padding: 10px;
     border: none;
     border-radius: 5px;
     margin-bottom: 10px;
     background: #222;
     color: white;
+    transition: all 0.3s ease;
 }
 
-.newsletter button {
+.newsletter-input:focus {
+    outline: none;
+    background: #333;
+}
+
+.newsletter-btn {
     background: #2563EB;
     color: white;
     border: none;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.newsletter-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-3px);
+}
+
+/* Footer bottom */
 .footer-bottom {
     text-align: center;
     margin-top: 20px;
@@ -104,4 +185,28 @@
     border-top: 1px solid #222;
     padding-top: 10px;
     padding-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px;
+    }
+
+    .footer-column {
+        flex: 100%;
+        max-width: 100%;
+    }
 }
