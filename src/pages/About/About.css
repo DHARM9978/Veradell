@@ -1,16 +1,19 @@
-/* About.css */
+/* About.css - Updated with animation styles */
 .about-page {
   font-family: 'Arial', sans-serif;
   color: #ffffff;
   background-color: #121212;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 /* Hero Section */
 .hero-section {
   text-align: center;
-  padding: 80px 20px;
+  padding: 200px 20px;
+  height: 500px;
+
   background-color: #1e1e1e;
 }
 
@@ -48,6 +51,7 @@
   flex: 1;
   min-width: 300px;
   max-width: 350px;
+  will-change: transform;
 }
 
 .mv-card h3 {
@@ -83,6 +87,7 @@
   display: flex;
   margin-bottom: 30px;
   align-items: flex-start;
+  will-change: transform;
 }
 
 .year {
@@ -136,6 +141,7 @@
   padding: 30px;
   border-radius: 8px;
   width: 200px;
+  will-change: transform;
 }
 
 .member-image {
@@ -144,6 +150,11 @@
   background-color: #333;
   border-radius: 50%;
   margin: 0 auto 20px;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover .member-image {
+  transform: scale(1.05);
 }
 
 .team-member h4 {
@@ -190,6 +201,12 @@
   font-weight: bold;
   cursor: pointer;
   font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: #00a5b8;
+  transform: translateY(-2px);
 }
 
 .contact-btn {
@@ -201,6 +218,12 @@
   font-weight: bold;
   cursor: pointer;
   font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 /* Responsive adjustments */
@@ -209,20 +232,20 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .mv-card {
     max-width: 100%;
   }
-  
+
   .journey-item {
     flex-direction: column;
   }
-  
+
   .year {
     margin-bottom: 10px;
     margin-right: 0;
   }
-  
+
   .team-member {
     width: 100%;
     max-width: 200px;

@@ -263,8 +263,11 @@ const Profile = () => {
                             </div>
                         </form>
                     </div>
+
                 </motion.div>
+
             </div>
+            <div className="header-spacer" style={{ height: '80px' }}></div>
         </motion.div>
     );
 };
