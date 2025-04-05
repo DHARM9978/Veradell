@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //Extra File 
-// import CheckoutPage from './Extra/Extra';
+import SearchedProduct from './Extra/Extra';
 
 //Incomplete Pages/Sections
+// import SearchedProduct from './pages/SearchedProduct/SearchedProduct';
 
 
 // Complete Sections
@@ -17,6 +18,10 @@ import About from "./pages/About/About";
 import ChangePassword from "./pages/ChangePassword/ChangePassword";
 import ContactUs from './pages/ContactUs/ContactUs'
 import CheckoutPage from './pages/CheckOutPage/CheckOutPage'
+import HomePage from './pages/HomePage/HomePage';
+import Wishlist from './pages/Wishlist/Wishlist';
+import SearchPage from './pages/SearchPage/SearchPage';
+import AIFashionUpload from "./pages/AIUpload/AIUpload";
 
 const App = () => {
   return (
@@ -29,6 +34,11 @@ const App = () => {
       {/* <Profile /> */}
       {/* <ContactUs /> */}
       {/* <CheckoutPage /> */}
+      {/* <HomePage /> */}
+      {/* <Wishlist /> */}
+      {/* <SearchPage /> */}
+      {/* <AIFashionUpload /> */}
+      <SearchedProduct />
       {/* <Footer /> */}
     </>
   );
