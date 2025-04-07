@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import './HomePage.css';
 
 // Import all images
-import heroImage from '../../assets/Images/Captain.jpg';
-import womenCollection from '../../assets/Images/Deadpool.jpg';
-import menCollection from '../../assets/Images/Draco.jpg';
-import accessories from '../../assets/Images/Hulk.jpg';
-import newArrivals from '../../assets/Images/Dudly.jpg';
-import sweater from '../../assets/Images/Loki.jpg';
-import leatherJacket from '../../assets/Images/Iron-Man.jpg';
-import eveningDress from '../../assets/Images/Longbottom.jpg';
-import woodCoat from '../../assets/Images/Thor.jpg';
+import heroImage from '../../assets/Images/Banner Image.webp';
+import womenCollection from '../../assets/Images/Women.webp';
+import menCollection from '../../assets/Images/men.webp';
+import accessories from '../../assets/Images/Accesories.webp';
+import newArrivals from '../../assets/Images/New Arrival.webp';
+import sweater from '../../assets/Images/Sweater.webp';
+import leatherJacket from '../../assets/Images/Jacket.webp';
+import eveningDress from '../../assets/Images/Evening Dress.webp';
+import woodCoat from '../../assets/Images/WoolCoat.webp';
 
 const HomePage = () => {
     const [email, setEmail] = useState('');

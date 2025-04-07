@@ -26,7 +26,7 @@ import AIFashionUpload from "./pages/AIUpload/AIUpload";
 const App = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       {/* <ChangePassword /> */}
       {/* <About /> */}
       {/* <Login /> */}
@@ -34,12 +34,12 @@ const App = () => {
       {/* <Profile /> */}
       {/* <ContactUs /> */}
       {/* <CheckoutPage /> */}
-      {/* <HomePage /> */}
+      <HomePage />
       {/* <Wishlist /> */}
       {/* <SearchPage /> */}
       {/* <AIFashionUpload /> */}
-      <SearchedProduct />
-      {/* <Footer /> */}
+      {/* <SearchedProduct /> */}
+      <Footer />
     </>
   );
 };

@@ -192,6 +192,7 @@ p {
 .product-card {
     background-color: var(--card-bg);
     border-radius: 12px;
+    height: 400px;
     overflow: hidden;
     transition: all 0.4s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -200,7 +201,7 @@ p {
 }
 
 .product-image {
-    height: 280px;
+    height: 400px;
     background-size: cover;
     background-position: center;
     transition: transform 0.5s ease;
