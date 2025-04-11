@@ -6,9 +6,9 @@ import './Profile.css';
 const Profile = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [formData, setFormData] = useState({
-        firstName: 'Dharm',
-        lastName: 'Patel',
-        email: 'dharm@example.com',
+        firstName: 'Arjun',
+        lastName: 'Krishna',
+        email: 'User@example.com',
         phone: '+91 1231231211',
         gender: 'male',
         profileImage: 'https://lunaf.com/img/moon/m-phase-16.webp'
