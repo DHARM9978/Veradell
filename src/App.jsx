@@ -27,14 +27,15 @@ const App = () => {
   return (
     <>
       <Header />
+
+      {/* <HomePage />   */}
+      {/* <Signup /> */}
+      <Login />
+      {/* <Profile /> */}
       {/* <ChangePassword /> */}
       {/* <About /> */}
-      {/* <Login /> */}
-      {/* <Signup /> */}
-      {/* <Profile /> */}
       {/* <ContactUs /> */}
       {/* <CheckoutPage /> */}
-      <HomePage />
       {/* <Wishlist /> */}
       {/* <SearchPage /> */}
       {/* <AIFashionUpload /> */}

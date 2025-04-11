@@ -1,17 +1,19 @@
 /* Dark Theme Base Styles */
 :root {
     --dark-bg: #121212;
-    --darker-bg: #0a0a0a;
-    --card-bg: #1e1e1e;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --accent-color: #bb86fc;
-    --accent-hover: #9e5ff9;
-    --price-color: #03dac6;
-    --error-color: #cf6679;
-    --success-color: #4caf50;
+    --darker-bg: #1E1E1E;
+    --card-bg: #2D2D2D;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B3B3B3;
+    --accent-color: #BB86FC;
+    --accent-hover: #9E5FF9;
+    --price-color: #03DAC6;
+    --error-color: #CF6679;
+    --success-color: #4CAF50;
+    --divider-color: #373737;
 }
 
+/* Rest of the CSS remains exactly the same */
 * {
     margin: 0;
     padding: 0;
@@ -44,21 +46,25 @@ p {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-/* Hero Section */
+/* Hero Section - Updated */
 .hero-section {
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
     height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
     max-width: 800px;
     padding: 0 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
@@ -175,7 +181,7 @@ p {
     background: rgba(0, 0, 0, 0.7);
 }
 
-/* New Arrivals Section */
+/* New Arrivals Section (Unchanged) */
 .new-arrivals {
     padding: 5rem 2rem;
     background-color: var(--dark-bg);
@@ -312,34 +318,74 @@ p {
     }
 }
 
-/* Responsive Design */
+/* Responsive Design - Hero Section Fixes */
 @media (max-width: 768px) {
     .hero-section {
         height: 70vh;
+        background-position: center top 25%;
     }
 
-    .categories-grid,
-    .products-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-section {
-        height: 60vh;
+    .hero-content {
+        padding: 0 1.5rem;
     }
 
     .hero-content h1 {
         font-size: 2.2rem;
     }
 
-    .categories-grid,
-    .products-grid {
-        grid-template-columns: 1fr;
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 60vh;
+        background-position: center top 30%;
+        background-size: cover;
     }
 
-    .category-card,
-    .product-card {
-        min-height: auto;
+    .hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .shop-now-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
+
+    /* Categories Section Mobile Fix */
+    .categories-grid {
+        grid-template-columns: 1fr;
+        margin: 0 0.5rem;
+    }
+
+    .category-card {
+        min-height: 160px;
+        margin: 0 0.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-section {
+        height: 55vh;
+        background-position: center top 35%;
+    }
+
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Orientation-specific adjustments */
+@media (orientation: portrait) and (max-width: 768px) {
+    .hero-section {
+        background-position: center top 30%;
     }
 }

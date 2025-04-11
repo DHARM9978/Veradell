@@ -3,6 +3,27 @@ import './HomePage.css';
 
 // Import all images
 import heroImage from '../../assets/Images/Banner Image.webp';
+
+
+
+// const womenCollection = "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80";
+// // (Women's fashion collection)
+
+// const menCollection = "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=800&q=80";
+// // (Men's formal wear)
+
+// const accessories = "https://images.unsplash.com/photo-1591348122449-02525d7035ff?auto=format&fit=crop&w=800&q=80";
+// // (Fashion accessories)
+
+// const newArrivals = "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80";
+// // (New collection rack)
+
+
+
+
+
+
+
 import womenCollection from '../../assets/Images/Women.webp';
 import menCollection from '../../assets/Images/men.webp';
 import accessories from '../../assets/Images/Accesories.webp';
@@ -46,6 +67,7 @@ const HomePage = () => {
             {/* Categories Section */}
             <section className="categories-section">
                 <h2 className="section-title">Shop by Category</h2>
+                <br />
                 <div className="categories-grid">
                     <div className="category-card slide-in" style={{ backgroundImage: `url(${womenCollection})` }}>
                         <div className="category-overlay">
@@ -73,6 +95,8 @@ const HomePage = () => {
             {/* New Arrivals Section */}
             <section className="new-arrivals">
                 <h2 className="section-title">New Arrivals</h2>
+                <br />
+
                 <div className="products-grid">
                     <div className="product-card fade-in">
                         <div className="product-image" style={{ backgroundImage: `url(${sweater})` }}></div>

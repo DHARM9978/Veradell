@@ -1,17 +1,28 @@
-/* Base styles */
+:root {
+    --dark-bg: #121212;
+    --darker-bg: #1E1E1E;
+    --card-bg: #2D2D2D;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B3B3B3;
+    --accent-color: #BB86FC;
+    --accent-hover: #9E5FF9;
+    --divider-color: #373737;
+}
+
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .mainFooter {
-    background-color: #111;
+    background-color: transparent;
 }
 
 .footer {
-    color: white;
+    color: var(--text-primary);
     padding: 40px 80px;
     display: flex;
     justify-content: space-between;
@@ -25,16 +36,16 @@
     opacity: 0;
 }
 
-/* Column entry animation */
+/* Animations */
 @keyframes colorfulFadeIn {
     0% {
         opacity: 0;
         transform: translateY(20px);
-        box-shadow: 0 0 0 0 rgba(75, 192, 192, 0.7);
+        box-shadow: 0 0 0 0 var(--accent-hover);
     }
 
     50% {
-        box-shadow: 0 0 0 10px rgba(75, 192, 192, 0);
+        box-shadow: 0 0 0 10px rgba(187, 134, 252, 0);
     }
 
     100% {
@@ -43,39 +54,54 @@
     }
 }
 
-/* Logo animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Logo Section */
+.footer-logo {
+    margin: 1.5rem 0 1rem;
+}
+
 .logo-animate {
     width: 150px;
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .logo-animate:hover {
+    filter: drop-shadow(0 0 8px var(--accent-hover));
     transform: rotate(-5deg) scale(1.1);
-    filter: drop-shadow(0 0 8px #ff7eb9);
 }
 
-/* Description text */
+/* Description */
 .description-animate {
     font-size: 16px;
     margin: 20px 0;
-    color: #bbb;
+    color: var(--text-secondary);
     max-width: 250px;
     transition: all 0.3s ease;
 }
 
 .description-animate:hover {
-    color: #7afcff;
-    text-shadow: 0 0 5px rgba(122, 252, 255, 0.5);
+    color: var(--accent-color);
+    text-shadow: 0 0 5px rgba(187, 134, 252, 0.5);
 }
 
-/* Social icons */
+/* Social Icons */
 .social-icons {
     display: flex;
     gap: 20px;
+    margin-top: 30px;
 }
 
 .social-icons a {
-    color: white;
+    color: var(--text-primary);
     font-size: 18px;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -100,113 +126,122 @@
     transform: translateY(-5px) scale(1.2);
 }
 
-/* Section titles (simplified white) */
+/* Navigation Links */
 .section-title {
-    font-size: 16px;
-    margin-bottom: 25px;
-    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 35px;
     position: relative;
 }
 
-/* Links with animation */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
 .link-animate {
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .link-animate a {
-    color: #bbb;
+    color: var(--text-secondary);
     text-decoration: none;
-    padding: 5px 0;
+    padding: 8px 0;
     position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
-.link-animate a::before {
+/* Sliding Underline Animation */
+.link-animate a::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #7afcff, #ff7eb9);
-    transition: width 0.3s ease;
+    background: var(--accent-color);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link-animate:hover {
-    transform: translateX(8px);
+.link-animate:hover a {
+    transform: translateX(12px);
+    color: var(--text-primary);
 }
 
-.link-animate:hover a::before {
+.link-animate:hover a::after {
     width: 100%;
 }
 
-/* Newsletter section */
+/* Newsletter Section */
 .newsletter-container {
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .newsletter-input {
-    padding: 10px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    padding: 12px;
     border: none;
     border-radius: 5px;
-    margin-bottom: 10px;
-    background: #222;
-    color: white;
     transition: all 0.3s ease;
 }
 
 .newsletter-input:focus {
+    background: var(--darker-bg);
     outline: none;
-    background: #333;
 }
 
 .newsletter-btn {
-    background: #2563EB;
-    color: white;
+    background: var(--accent-color);
+    color: var(--text-primary);
     border: none;
-    padding: 10px;
+    padding: 12px;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .newsletter-btn:hover {
-    background: #1d4ed8;
+    background: var(--accent-hover);
     transform: translateY(-3px);
 }
 
-/* Footer bottom */
+/* Footer Bottom */
 .footer-bottom {
+    color: var(--text-secondary);
+    border-top: 1px solid var(--divider-color);
     text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #bbb;
-    border-top: 1px solid #222;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    margin-top: 40px;
+    padding: 20px 0;
     opacity: 0;
     animation: fadeIn 0.5s ease 0.8s forwards;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* Responsive styles */
+/* Responsive Design */
 @media (max-width: 768px) {
     .footer {
         padding: 30px;
+        gap: 40px;
     }
 
     .footer-column {
         flex: 100%;
         max-width: 100%;
+    }
+
+    .link-animate:hover a {
+        transform: translateX(8px);
+    }
+
+    .social-icons {
+        justify-content: center;
     }
 }

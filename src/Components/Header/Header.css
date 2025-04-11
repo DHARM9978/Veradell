@@ -1,10 +1,22 @@
+/* Add color variables to Header.css */
+:root {
+    --header-bg: #121212;
+    --sidebar-bg: #1E1E1E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B3B3B3;
+    --divider-color: #373737;
+    --accent-color: #BB86FC;
+    --error-color: #CF6679;
+    --overlay-color: rgba(0, 0, 0, 0.6);
+}
+
 /* Header styling */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #000;
-    color: white;
+    background: var(--header-bg);
+    color: var(--text-primary);
     padding: 15px 20px;
     position: fixed;
     top: 0;
@@ -17,13 +29,59 @@
 .menu-toggle {
     background: none;
     border: none;
-    color: white;
+    color: var(--text-primary);
     font-size: 20px;
     cursor: pointer;
     transition: transform 0.2s ease;
     z-index: 10;
 }
 
+.header-icons .icon {
+    font-size: 24px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.header-icons .icon:hover {
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.cart-badge {
+    background: var(--error-color);
+    color: var(--text-primary);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background: var(--sidebar-bg);
+}
+
+.nav-links li {
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.nav-links li:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.submenu li {
+    color: var(--text-secondary);
+}
+
+/* Mobile Icons */
+.sidebar-icons {
+    border-top: 1px solid var(--divider-color);
+}
+
+/* Overlay */
+.overlay {
+    background: var(--overlay-color);
+}
+
+/* Rest of the CSS remains unchanged */
 .menu-toggle:hover {
     transform: scale(1.1);
 }
@@ -47,18 +105,6 @@
     gap: 30px;
 }
 
-.header-icons .icon {
-    font-size: 24px;
-    color: #ccc;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.header-icons .icon:hover {
-    color: white;
-    transform: scale(1.1);
-}
-
 .cart-icon {
     position: relative;
 }
@@ -67,8 +113,6 @@
     position: absolute;
     top: -8px;
     right: -8px;
-    background: red;
-    color: white;
     font-size: 10px;
     width: 18px;
     height: 18px;
@@ -78,14 +122,12 @@
     justify-content: center;
 }
 
-/* Sidebar Styling */
 .sidebar {
     position: fixed;
     left: -100%;
     top: 0;
     width: 280px;
     height: 100vh;
-    background: #111;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 999;
     overflow-y: auto;
@@ -106,7 +148,7 @@
     right: 20px;
     background: none;
     border: none;
-    color: white;
+    color: var(--text-primary);
     font-size: 22px;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -125,13 +167,7 @@
 .nav-links li {
     padding: 12px 0;
     cursor: pointer;
-    color: white;
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-links li:hover {
-    background: rgba(255, 255, 255, 0.05);
 }
 
 .menu-item {
@@ -163,20 +199,17 @@
 .submenu li {
     padding: 10px 0;
     font-size: 0.9em;
-    opacity: 0.8;
 }
 
 .submenu li:hover {
     opacity: 1;
 }
 
-/* Mobile Icons */
 .sidebar-icons {
     display: flex;
     justify-content: center;
     padding: 20px;
     gap: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 20px;
 }
 
@@ -184,14 +217,12 @@
     font-size: 24px;
 }
 
-/* Overlay */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
     z-index: 998;
     opacity: 0;
     pointer-events: none;
@@ -203,7 +234,6 @@
     pointer-events: auto;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .logo img {
         width: 120px;
