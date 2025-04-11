@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaEye, FaEyeSlash, FaCheck, FaTimes, FaExclamationCircle, FaLock } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import "./Extra.css";
+import "./ChangePassword.css";
 
 const ChangePassword = () => {
   const [formData, setFormData] = useState({

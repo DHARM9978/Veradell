@@ -5,9 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import ChangePassword from './Extra/Extra';
 
 //Incomplete Pages/Sections
-
-// import ChangePassword from "./pages/ChangePassword/ChangePassword";
-
+// import SearchedProduct from './pages/SearchedProduct/SearchedProduct';
 
 
 // Complete Sections
