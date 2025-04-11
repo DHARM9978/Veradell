@@ -1,0 +1,113 @@
+/* Custom Styles */
+body {
+  background-color: #000;
+}
+
+/* Main Image Container */
+.main-image-container {
+  height: 600px;
+  border: 1px solid #2d2d2d !important;
+}
+
+.main-product-image {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Thumbnails */
+.thumbnail-container {
+  height: 120px;
+  border: 1px solid #2d2d2d !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.thumbnail-container:hover {
+  border-color: #00ffff !important;
+}
+
+/* Custom Primary Button */
+.btn-custom-primary {
+  background-color: #00d4ff;
+  border-color: #00d4ff;
+  color: #000;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-custom-primary:hover {
+  background-color: #00b4d8;
+  border-color: #00b4d8;
+}
+
+/* Size Buttons */
+.size-btn {
+  width: 70px;
+  transition: all 0.3s ease;
+}
+
+.size-btn:hover {
+  background-color: #00d4ff !important;
+  color: #000 !important;
+}
+
+/* Color Swatches */
+.color-swatch {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #2d2d2d !important;
+  transition: all 0.3s ease;
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+  border-color: #00d4ff !important;
+}
+
+.color-checkmark {
+  color: #fff;
+  font-size: 1.4rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* Quantity Selector */
+.quantity-selector input {
+  border-color: #00d4ff !important;
+}
+
+/* Related Products */
+.related-product-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.related-product-card:hover {
+  transform: translateY(-5px);
+  border-color: #00d4ff !important;
+}
+
+.related-product-image {
+  height: 250px;
+  object-fit: contain;
+  background-color: #111;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .main-image-container {
+    height: 400px;
+  }
+  
+  .thumbnail-container {
+    height: 80px;
+  }
+  
+  .size-btn {
+    width: 60px;
+    padding: 0.25rem 0.5rem;
+  }
+}

@@ -62,7 +62,7 @@ export default function LastSectionFooter() {
                 </div>
             </footer>
             <div className="footer-bottom bottom-animate">
-                &copy; 2024 Company Name. All rights reserved.
+                &copy; 2024 VERADELL. All rights reserved.
             </div>
         </div>
     );
